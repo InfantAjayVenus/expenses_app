@@ -33,3 +33,26 @@ class ExpenseRecord {
     return dateFormatter.format(date!);
   }
 }
+
+class ExpenseCollection {
+  ExpenseCollection(this.category, this.expensesList);
+  ExpenseCollection.forCategory(this.category, List<ExpenseRecord> allExpense)
+      : expensesList = allExpense
+            .where(
+              (expenseItem) => expenseItem.category == category,
+            )
+            .toList();
+
+  final Category category;
+  final List<ExpenseRecord> expensesList;
+
+  get totalExpenses {
+    double totalExpense = 0;
+
+    for (final expenseItem in expensesList) {
+      totalExpense += expenseItem.amount;
+    }
+
+    return totalExpense;
+  }
+}

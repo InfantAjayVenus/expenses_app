@@ -168,12 +168,8 @@ class _ExpenseFormState extends State<ExpenseForm> {
                       width: 8,
                     ),
                     ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blue.shade400,
-                        foregroundColor: Colors.white,
-                      ),
                       onPressed: _saveValues,
-                      child: const Text('Save'),
+                      child: const Text('Update'),
                     ),
                   ],
                 ),
